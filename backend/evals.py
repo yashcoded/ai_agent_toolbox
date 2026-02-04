@@ -7,8 +7,13 @@ from datetime import datetime
 import json
 import os
 
-from agent import create_agent
-from db import log_evaluation
+# Try relative imports first, then absolute
+try:
+    from .agent import create_agent
+    from .db import log_evaluation
+except ImportError:
+    from agent import create_agent
+    from db import log_evaluation
 
 
 class EvalResult(BaseModel):

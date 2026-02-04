@@ -2,7 +2,6 @@
 Tool implementations for the AI agent
 """
 from langchain.tools import Tool
-from langchain.utilities import GoogleSerperAPIWrapper
 from typing import List
 import os
 import re
@@ -15,14 +14,15 @@ def web_search(query: str) -> str:
     Search the web for information
     """
     try:
-        # Use Google Serper API if available
-        api_key = os.getenv("SERPER_API_KEY")
+        # Use SerpAPI if available
+        api_key = os.getenv("SERPER_API_KEY") or os.getenv("SERPAPI_API_KEY")
         if api_key:
-            search = GoogleSerperAPIWrapper(serper_api_key=api_key)
+            from langchain_community.utilities import SerpAPIWrapper
+            search = SerpAPIWrapper(serpapi_api_key=api_key)
             return search.run(query)
         else:
             # Fallback: return a placeholder
-            return f"Web search for '{query}': Feature requires SERPER_API_KEY environment variable."
+            return f"Web search for '{query}': Feature requires SERPER_API_KEY or SERPAPI_API_KEY environment variable."
     except Exception as e:
         return f"Error performing web search: {str(e)}"
 

@@ -10,10 +10,17 @@ import asyncio
 import json
 import logging
 
-from agent import create_agent, AgentCallbackHandler
-from tools import get_available_tools
-from db import get_db_connection, log_interaction, get_evals
-from evals import EvalResult
+# Try relative imports first, then absolute
+try:
+    from .agent import create_agent, AgentCallbackHandler
+    from .tools import get_available_tools
+    from .db import get_db_connection, log_interaction, get_evals
+    from .evals import EvalResult
+except ImportError:
+    from agent import create_agent, AgentCallbackHandler
+    from tools import get_available_tools
+    from db import get_db_connection, log_interaction, get_evals
+    from evals import EvalResult
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)

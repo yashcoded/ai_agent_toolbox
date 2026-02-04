@@ -11,7 +11,11 @@ import os
 import redis
 import json
 
-from tools import get_available_tools
+# Try relative import first, then absolute
+try:
+    from .tools import get_available_tools
+except ImportError:
+    from tools import get_available_tools
 
 
 # Redis client for memory
