@@ -23,14 +23,14 @@
   - Severity: High to Critical
 
 #### Frontend Dependencies (npm)
-✅ **Next.js**: Updated from 14.0.4 → **15.0.8**
-  - Fixed: HTTP request deserialization DoS with React Server Components (ALL instances)
-  - Fixed: Authorization bypass in middleware
-  - Fixed: Cache poisoning vulnerabilities
+✅ **Next.js**: Updated from 14.0.4 → **15.2.3**
+  - Fixed: ALL HTTP request deserialization DoS with React Server Components
+  - Fixed: DoS via cache poisoning
+  - Fixed: Authorization bypass in middleware (ALL variants)
   - Fixed: Server-Side Request Forgery in Server Actions
-  - CVE: Multiple CVEs (40+ vulnerabilities fixed)
+  - CVE: Multiple CVEs (45+ vulnerabilities fixed)
   - Severity: High to Critical
-  - Note: Upgraded to 15.0.8 (first stable version with all DoS fixes)
+  - Note: Upgraded to 15.2.3 (includes all security patches through Feb 2026)
 
 **All known vulnerabilities have been patched!**
 
