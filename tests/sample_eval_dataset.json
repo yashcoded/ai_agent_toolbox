@@ -1,0 +1,36 @@
+{
+  "name": "sample_agent_eval",
+  "description": "Sample evaluation dataset for testing agent capabilities",
+  "test_cases": [
+    {
+      "name": "simple_calculation",
+      "input": "What is 15 + 27?",
+      "expected_keywords": ["42", "answer"],
+      "pass_threshold": 0.5
+    },
+    {
+      "name": "web_search_query",
+      "input": "Search for the latest news about AI",
+      "expected_keywords": ["search", "AI", "news"],
+      "pass_threshold": 0.3
+    },
+    {
+      "name": "code_execution",
+      "input": "Write and execute Python code to calculate the factorial of 5",
+      "expected_keywords": ["120", "factorial"],
+      "pass_threshold": 0.5
+    },
+    {
+      "name": "reasoning_task",
+      "input": "If a train travels 60 km in 30 minutes, what is its speed in km/h?",
+      "expected_keywords": ["120", "km/h", "speed"],
+      "pass_threshold": 0.5
+    },
+    {
+      "name": "tool_selection",
+      "input": "I need to calculate 456 * 789. Can you help?",
+      "expected_keywords": ["359784", "calculator"],
+      "pass_threshold": 0.5
+    }
+  ]
+}
