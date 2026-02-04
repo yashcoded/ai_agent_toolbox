@@ -6,7 +6,7 @@
 | ------- | ------------------ |
 | 0.1.x   | :white_check_mark: |
 
-## Recent Security Updates (v0.1.1)
+## Recent Security Updates (v0.1.2)
 
 We have addressed all known security vulnerabilities in our dependencies:
 
@@ -33,8 +33,8 @@ We have addressed all known security vulnerabilities in our dependencies:
 
 ### Frontend (npm) Security Fixes
 
-1. **Next.js** (14.1.0 → 14.2.35)
-   - Fixed: Multiple HTTP request deserialization DoS vulnerabilities
+1. **Next.js** (14.1.0 → 14.2.35 → 15.0.8)
+   - Fixed: Multiple HTTP request deserialization DoS vulnerabilities in React Server Components
    - Fixed: Authorization bypass vulnerability
    - Fixed: Cache poisoning vulnerability
    - Fixed: SSRF in Server Actions
@@ -179,9 +179,14 @@ We monitor security advisories for:
 
 ## Version History
 
-### v0.1.1 (Current)
+### v0.1.2 (Current)
 - ✅ All known vulnerabilities patched
+- ✅ Next.js upgraded to 15.0.8 (major version upgrade for security)
 - ✅ Dependencies updated to secure versions
+
+### v0.1.1
+- ✅ Initial security patches applied
+- ⚠️ Next.js 14.2.35 still had vulnerabilities (now fixed in v0.1.2)
 
 ### v0.1.0 (Initial)
 - ⚠️ Security vulnerabilities in dependencies (now fixed)
