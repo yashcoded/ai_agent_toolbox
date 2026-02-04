@@ -20,7 +20,7 @@ class AgentRun(Base):
     duration_ms = Column(Float)
     status = Column(String(20), default="running")
     created_at = Column(DateTime, default=datetime.utcnow)
-    metadata = Column(JSON)
+    extra_data = Column(JSON)
 
 
 class ToolCall(Base):
@@ -52,7 +52,7 @@ class Evaluation(Base):
     score = Column(Float)
     passed = Column(Integer)
     created_at = Column(DateTime, default=datetime.utcnow)
-    metadata = Column(JSON)
+    extra_data = Column(JSON)
 
 
 class PromptVersion(Base):
@@ -67,4 +67,4 @@ class PromptVersion(Base):
     variables = Column(JSON)
     is_active = Column(Integer, default=1)
     created_at = Column(DateTime, default=datetime.utcnow)
-    metadata = Column(JSON)
+    extra_data = Column(JSON)

@@ -5,6 +5,14 @@ All notable changes to the AI Agent Toolbox project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.5] - 2024
+
+### Fixed
+- Fixed SQLAlchemy model error: renamed `metadata` columns to `extra_data` to avoid conflict with SQLAlchemy's reserved attribute
+- Updated LangChain dependencies to compatible versions (0.3.27) to resolve dependency conflicts
+- Updated pydantic and pydantic-settings to compatible versions (>=2.9.0, >=2.4.0)
+- Tests now run successfully (2 passing, 4 failing due to missing external services as expected)
+
 ## [0.1.4] - 2024
 
 ### Security - CRITICAL
