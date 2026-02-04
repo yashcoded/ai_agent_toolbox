@@ -5,6 +5,15 @@ All notable changes to the AI Agent Toolbox project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.4] - 2024
+
+### Security - CRITICAL
+- **CRITICAL**: Updated Next.js from 15.2.3 to 15.5.10 to fix multiple severe vulnerabilities:
+  - **RCE (Remote Code Execution) in React flight protocol** - CRITICAL severity
+  - HTTP request deserialization DoS in React Server Components
+  - Multiple Denial of Service vulnerabilities with Server Components
+- This is a critical security update that patches Remote Code Execution vulnerabilities
+
 ## [0.1.3] - 2024
 
 ### Security

@@ -6,9 +6,11 @@
 | ------- | ------------------ |
 | 0.1.x   | :white_check_mark: |
 
-## Recent Security Updates (v0.1.3)
+## Recent Security Updates (v0.1.4 - CRITICAL)
 
-We have addressed all known security vulnerabilities in our dependencies:
+⚠️ **CRITICAL SECURITY UPDATE** - Remote Code Execution vulnerability patched
+
+We have addressed all known security vulnerabilities in our dependencies, including a CRITICAL Remote Code Execution (RCE) vulnerability:
 
 ### Backend (Python) Security Fixes
 
@@ -31,16 +33,22 @@ We have addressed all known security vulnerabilities in our dependencies:
    - Severity: High
    - Impact: File system manipulation, denial of service
 
-### Frontend (npm) Security Fixes
+### Frontend (npm) Security Fixes - CRITICAL
 
-1. **Next.js** (14.1.0 → 14.2.35 → 15.0.8 → 15.2.3)
+1. **Next.js** (14.1.0 → 14.2.35 → 15.0.8 → 15.2.3 → 15.5.10)
+   - **CRITICAL: Remote Code Execution (RCE) in React flight protocol**
+     - Affected versions: >= 15.2.0-canary.0, < 15.2.6
+     - Patched in: 15.2.6, fully secured in 15.5.10
+     - Severity: **CRITICAL**
+     - Impact: **Remote code execution - attackers could execute arbitrary code**
    - Fixed: Multiple HTTP request deserialization DoS vulnerabilities in React Server Components
+   - Fixed: Multiple DoS vulnerabilities with Server Components
    - Fixed: DoS via cache poisoning vulnerability
    - Fixed: Authorization bypass vulnerabilities in Middleware
    - Fixed: Cache poisoning vulnerability
    - Fixed: SSRF in Server Actions
-   - Severity: High
-   - Impact: Denial of service, unauthorized access, request forgery
+   - Severity: Critical to High
+   - Impact: Remote code execution, denial of service, unauthorized access
 
 ## Reporting a Vulnerability
 
@@ -179,21 +187,29 @@ We monitor security advisories for:
 
 ## Version History
 
-### v0.1.3 (Current)
-- ✅ All known vulnerabilities patched
-- ✅ Next.js upgraded to 15.2.3 (includes all security fixes)
+### v0.1.4 (Current) - CRITICAL UPDATE
+- ✅ **CRITICAL RCE vulnerability patched**
+- ✅ Next.js upgraded to 15.5.10 (patches all known vulnerabilities)
+- ✅ Remote Code Execution vulnerability eliminated
+- ✅ All DoS vulnerabilities patched
 - ✅ No remaining vulnerabilities
+
+### v0.1.3
+- ✅ Next.js upgraded to 15.2.3
+- ⚠️ **CRITICAL**: Had RCE vulnerability (now fixed in v0.1.4)
+- ⚠️ Had additional DoS vulnerabilities (now fixed in v0.1.4)
 
 ### v0.1.2
 - ✅ Next.js upgraded to 15.0.8
-- ⚠️ Next.js 15.0.8 had additional vulnerabilities (now fixed in v0.1.3)
+- ⚠️ Had cache poisoning & auth bypass (fixed in v0.1.3)
+- ⚠️ Had RCE vulnerability (fixed in v0.1.4)
 
 ### v0.1.1
 - ✅ Initial security patches applied
-- ⚠️ Next.js 14.2.35 still had vulnerabilities (fixed in later versions)
+- ⚠️ Next.js 14.2.35 had multiple vulnerabilities (fixed in later versions)
 
 ### v0.1.0 (Initial)
-- ⚠️ Security vulnerabilities in dependencies (now fixed)
+- ⚠️ Multiple security vulnerabilities in dependencies (now all fixed)
 
 ## Contact
 
