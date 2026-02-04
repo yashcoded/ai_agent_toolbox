@@ -5,6 +5,25 @@ All notable changes to the AI Agent Toolbox project will be documented in this f
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.1.1] - 2024
+
+### Security
+- Updated fastapi from 0.109.0 to 0.109.1 to fix ReDoS vulnerability
+- Updated langchain-community from 0.0.13 to 0.3.27 to fix:
+  - XML External Entity (XXE) Attacks vulnerability
+  - SSRF vulnerability in RequestsToolkit component
+  - Pickle deserialization of untrusted data vulnerability
+- Updated python-multipart from 0.0.6 to 0.0.22 to fix:
+  - Arbitrary File Write via Non-Default Configuration
+  - Denial of service (DoS) via deformation multipart/form-data boundary
+  - Content-Type Header ReDoS vulnerability
+- Updated Next.js from 14.1.0 to 14.2.35 to fix:
+  - HTTP request deserialization DoS vulnerabilities
+  - Authorization bypass vulnerability
+  - Cache poisoning vulnerability
+  - Server-Side Request Forgery (SSRF) in Server Actions
+  - Authorization Bypass in Middleware
+
 ## [0.1.0] - 2024
 
 ### Added
