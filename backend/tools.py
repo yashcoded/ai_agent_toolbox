@@ -29,15 +29,45 @@ def web_search(query: str) -> str:
 
 def calculator(expression: str) -> str:
     """
-    Evaluate mathematical expressions
+    Evaluate mathematical expressions safely using AST
     """
     try:
-        # Remove any non-mathematical characters for safety
-        expression = re.sub(r'[^0-9+\-*/().\s]', '', expression)
+        import ast
+        import operator
         
-        # Evaluate the expression
-        result = eval(expression, {"__builtins__": {}})
+        # Define allowed operations
+        operators = {
+            ast.Add: operator.add,
+            ast.Sub: operator.sub,
+            ast.Mult: operator.mul,
+            ast.Div: operator.truediv,
+            ast.USub: operator.neg,
+        }
+        
+        def eval_expr(node):
+            """Safely evaluate an AST node"""
+            if isinstance(node, ast.Constant):  # number (Python 3.8+)
+                return node.value
+            elif isinstance(node, ast.Num):  # number (older Python)
+                return node.n
+            elif isinstance(node, ast.BinOp):  # binary operation
+                op = operators.get(type(node.op))
+                if op is None:
+                    raise ValueError(f"Unsupported operation: {type(node.op).__name__}")
+                return op(eval_expr(node.left), eval_expr(node.right))
+            elif isinstance(node, ast.UnaryOp):  # unary operation
+                op = operators.get(type(node.op))
+                if op is None:
+                    raise ValueError(f"Unsupported operation: {type(node.op).__name__}")
+                return op(eval_expr(node.operand))
+            else:
+                raise ValueError(f"Unsupported expression type: {type(node).__name__}")
+        
+        # Parse and evaluate
+        tree = ast.parse(expression, mode='eval')
+        result = eval_expr(tree.body)
         return str(result)
+        
     except Exception as e:
         return f"Error calculating '{expression}': {str(e)}"
 
