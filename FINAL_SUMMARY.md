@@ -112,7 +112,8 @@ Successfully implemented a complete, production-ready AI Agent Toolbox with Fast
 - Fixed: Content-Type Header ReDoS
 
 #### Frontend Security Updates
-✅ **Next.js** `14.0.4` → `15.2.3`
+✅ **Next.js** `14.0.4` → `15.5.10`
+- Fixed: **RCE (Remote Code Execution) in React flight protocol** (CRITICAL)
 - Fixed: ALL HTTP deserialization DoS vulnerabilities
 - Fixed: DoS via cache poisoning
 - Fixed: Authorization bypass in middleware (ALL 5 variants)
@@ -223,7 +224,7 @@ asyncpg==0.29.0               ✅ SECURE
 
 ### Frontend (npm)
 ```
-next: 15.2.3                  ✅ SECURE
+next: 15.5.10                 ✅ SECURE
 react: ^18.2.0                ✅ SECURE
 typescript: ^5                ✅ SECURE
 tailwindcss: ^3.3.0           ✅ SECURE

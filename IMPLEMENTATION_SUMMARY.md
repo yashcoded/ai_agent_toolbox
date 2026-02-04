@@ -298,7 +298,7 @@ All security vulnerabilities have been addressed by updating to patched versions
 - `python-multipart`: 0.0.6 → 0.0.22 (fixes multiple critical vulnerabilities)
 
 **Frontend (npm)**
-- `next`: 14.0.4 → 15.2.3 (fixes 45+ vulnerabilities including DoS, auth bypass, cache poisoning, SSRF)
+- `next`: 14.0.4 → 15.5.10 (fixes 50+ vulnerabilities including **CRITICAL RCE**, DoS, auth bypass, cache poisoning, SSRF)
 
 **All tests passing after updates**: ✅ 7 passed, 1 skipped
 
